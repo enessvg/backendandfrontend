@@ -14,9 +14,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ]);
-
         if ($response->successful()) {
-           
             $token = $response->json('token');
             session(['token' => $token]);
             

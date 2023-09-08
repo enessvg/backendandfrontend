@@ -195,7 +195,7 @@
             <span class="close">&times;</span>
           </div><br>
           <div class="container">
-            <form id="myForm" action="{{ route('guncelle', ['id' => $veri['id']]) }}" method="POST" {{-- onsubmit="return validateForm()" --}}>
+            <form id="myForm" action="{{ route('guncelle', ['id' => $veri['id']]) }}" method="POST" onsubmit="return validateForm()">
               @csrf
               <div class="mb-3">
                 <input class="form-control" type="text" name="id" value="{{ $veri['id'] }}" readonly />
@@ -239,48 +239,40 @@
 
 
   <script>
-  //   function validateForm() {
-  //   const nameInput = document.querySelector('input[name="name"]');
-  //   const descInput = document.querySelector('input[name="desc"]');
-  //   const miktarInput = document.querySelector('input[name="miktar"]');
-
-  //   if (nameInput.value.trim() === '' && descInput.value.trim() === '' && miktarInput.value.trim() === '') {
-  //     alert('Tüm alanlar boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (nameInput.value.trim() === '' && descInput.value.trim() === '') {
-  //     alert('Öğe Adı ve Öğe Açıklaması boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (nameInput.value.trim() === '' && miktarInput.value.trim() === '') {
-  //     alert('Öğe Adı ve Miktarı boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (descInput.value.trim() === '' && miktarInput.value.trim() === '') {
-  //     alert('Öğe Açıklaması ve Miktarı boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (nameInput.value.trim() === '') {
-  //     alert('Öğe Adı boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (descInput.value.trim() === '') {
-  //     alert('Öğe Açıklaması boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   if (miktarInput.value.trim() === '') {
-  //     alert('Miktarı boş bırakılamaz.');
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
+     function validateForm() {
+     const nameInput = document.querySelector('input[name="name"]');
+     const descInput = document.querySelector('input[name="desc"]');
+     const miktarInput = document.querySelector('input[name="miktar"]');
+     if (nameInput.value.trim() === '' && descInput.value.trim() === '' && miktarInput.value.trim() === '') {
+       alert('Tüm alanlar boş bırakılamaz.');
+       return false;
+     }
+     if (nameInput.value.trim() === '' && descInput.value.trim() === '') {
+       alert('Öğe Adı ve Öğe Açıklaması boş bırakılamaz.');
+       return false;
+     }
+     if (nameInput.value.trim() === '' && miktarInput.value.trim() === '') {
+       alert('Öğe Adı ve Miktarı boş bırakılamaz.');
+       return false;
+     }
+     if (descInput.value.trim() === '' && miktarInput.value.trim() === '') {
+       alert('Öğe Açıklaması ve Miktarı boş bırakılamaz.');
+       return false;
+     }
+     if (nameInput.value.trim() === '') {
+       alert('Öğe Adı boş bırakılamaz.');
+       return false;
+     }
+     if (descInput.value.trim() === '') {
+       alert('Öğe Açıklaması boş bırakılamaz.');
+       return false;
+     }
+     if (miktarInput.value.trim() === '') {
+       alert('Miktarı boş bırakılamaz.');
+       return false;
+     }
+     return true;
+   }
     const myForm = document.getElementById('myForm');
     function openModal(id, name, desc, miktar) {
         var modal = document.getElementById('myModal');
